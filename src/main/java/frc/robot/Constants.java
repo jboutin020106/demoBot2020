@@ -31,16 +31,16 @@ public final class Constants {
         public static final double RAMP_RATE = 0.2;
 
         // Drive PID Constants
-        private static final double kPDriveVel = 0.00289;
-        private static final double kDDriveVel = 0.0;
-        private static final double KP = kPDriveVel;
-        private static final double KI = 0.0;
-        private static final double KD = kDDriveVel;
-        private static final double KIZ = 0.0;
-        private static final double KFF = 0.0; 
-        private static final int K_MAX_OUTPUT = 1;
-        private static final int K_MIN_OUTPUT = -1;
-        private static final int MAX_RPM = 5700;
+        public static final double kPDriveVel = 0.00289;
+        public static final double kDDriveVel = 0.0;
+        public static final double KP = kPDriveVel;
+        public static final double KI = 0.0;
+        public static final double KD = kDDriveVel;
+        public static final double KIZ = 0.0;
+        public static final double KFF = 0.0; 
+        public static final int K_MAX_OUTPUT = 1;
+        public static final int K_MIN_OUTPUT = -1;
+        public static final int MAX_RPM = 5700;
 
     }
 }
