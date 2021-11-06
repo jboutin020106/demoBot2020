@@ -12,4 +12,35 @@ package frc.robot;
  * <p>It is advised to statically import this class (or one of its inner classes) wherever the
  * constants are needed, to reduce verbosity.
  */
-public final class Constants {}
+public final class Constants {
+    public static final class DriveConstants 
+    {
+        // Drive Motor Constants
+        public static final int FRONT_RIGHT_MOTOR = 3;
+        public static final int BACK__RIGHT_MOTOR = 1;
+        public static final int FRONT_LEFT_MOTOR = 4;
+        public static final int BACK_LEFT_MOTOR = 2;
+
+        // Current Limit Constant
+        public static final int CURRENT_LIMIT = 60;
+
+        // Voltage Comp Constant
+        public static final double VOLTAGE_COMP = 12.0;
+
+        //Ramp Rate Constant
+        public static final double RAMP_RATE = 0.2;
+
+        // Drive PID Constants
+        private static final double kPDriveVel = 0.00289;
+        private static final double kDDriveVel = 0.0;
+        private static final double KP = kPDriveVel;
+        private static final double KI = 0.0;
+        private static final double KD = kDDriveVel;
+        private static final double KIZ = 0.0;
+        private static final double KFF = 0.0; 
+        private static final int K_MAX_OUTPUT = 1;
+        private static final int K_MIN_OUTPUT = -1;
+        private static final int MAX_RPM = 5700;
+
+    }
+}
