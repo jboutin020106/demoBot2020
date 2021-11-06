@@ -4,7 +4,6 @@
 
 package frc.robot;
 
-import java.time.Instant;
 
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
@@ -13,6 +12,7 @@ import frc.robot.subsystems.DriveSubsystem;
 import frc.robot.subsystems.ExampleSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -27,15 +27,27 @@ public class RobotContainer {
   private final DriveSubsystem driveSub;
   private InstantCommand slowMode;
   private InstantCommand normalSpeed;
+  private XboxController operator;
+  private JoystickButton op_slowMode;
+  private JoystickButton op_normalSpeed;
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     driveSub = new DriveSubsystem();
     slowMode = new InstantCommand(() -> {
       driveSub.setSpeedScalar(0.3);
-    }, driveSub)
+    }, driveSub);
+    normalSpeed = new InstantCommand(() -> {
+      driveSub.setSpeedScalar(0.8);
+    }, driveSub);
+    operator = new XboxController(1);
+    op_slowMode = new JoystickButton(operator, 2);
+    op_normalSpeed = new JoystickButton(operator, 3);
+
     // Configure the button bindings
     configureButtonBindings();
+
+    slowMode.schedule();
   }
 
   /**
@@ -44,7 +56,10 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj.Joystick} or {@link XboxController}), and then passing it to a {@link
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
-  private void configureButtonBindings() {}
+  private void configureButtonBindings() {
+    op_slowMode.whenPressed(slowMode);
+    op_normalSpeed.whenPressed(normalSpeed);
+  }
 
   /**
    * Use this to pass the autonomous command to the main {@link Robot} class.

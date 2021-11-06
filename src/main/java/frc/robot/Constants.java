@@ -4,6 +4,7 @@
 
 package frc.robot;
 
+
 /**
  * The Constants class provides a convenient place for teams to hold robot-wide numerical or boolean
  * constants. This class should not be used for any other purpose. All constants should be declared
@@ -42,5 +43,36 @@ public final class Constants {
         public static final int K_MIN_OUTPUT = -1;
         public static final int MAX_RPM = 5700;
 
+    }
+    
+    public static final class IntakeAndOuttakeConstants
+    {   
+        //Intake and Outtake constants
+        public static final int SHOOTER_LEADER = 8;
+        public static final int SHOOTER_FOLLOWER = 9;
+        public static final int CONVEYOR_MOTOR_1 = 6;
+        public static final int CONVEYOR_MOTOR_2 = 7;
+        public static final int INTAKE_PRIMARY = 5;
+        public static final int INTAKE_SENSOR_1 = 1;
+        public static final int INTAKE_SENSOR_2 = 2;
+        public static final int INTAKE_SENSOR_3 = 3;
+
+         // Current Limit Constant
+         public static final int CURRENT_LIMIT = 60;
+
+         // Voltage Comp Constant
+         public static final double VOLTAGE_COMP = 12.0;
+ 
+         //Ramp Rate Constant
+         public static final double RAMP_RATE = 0.2;
+
+        // PID CONSTANTS
+         public static final double KP = 2.5e-4; 
+        public static final double KD = 0.0;
+        public static final int KIZ = 0;
+        public static final double KFF = 0.0001732;
+         public static final int K_MAX_OUTPUT = 1;
+        public static final int K_MIN_OUTPUT = -1;
+         public static final int MAXRPM = 5700;
     }
 }
